@@ -16,8 +16,11 @@ async def process_start_command(message: types.Message):
 
 @dp.message_handler(commands=['help'])
 async def process_help_command(message: types.Message):
-    await message.reply("Напиши мне что-нибудь, и я отпрпавлю этот текст тебе в ответ!")
+    await message.reply("Напиши мне что-нибудь, и я отправлю этот текст тебе в ответ!")
 
+dp.message_handler(commands=['stop'])
+async def process_help_command(message: types.Message):
+    await message.reply("Bot_stop_work")
 
 @dp.message_handler()
 async def echo_message(msg: types.Message):
